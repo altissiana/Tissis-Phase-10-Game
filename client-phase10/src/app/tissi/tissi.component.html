@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" rowHeight="fit" class="span-container">
+    <mat-grid-tile colspan="3">
+        <h1 class="tissi-title">Hey there, it's so nice to have you here. Tell me what you think!</h1>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <input class="tissi-input" type="text" id="tissi-text" name="tissi-text" [(ngModel)]="message">
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>
+        <button class="tissi-button" (click)="onSubmit()" [disabled]="!message">Send</button>
+    </mat-grid-tile>
+</mat-grid-list>

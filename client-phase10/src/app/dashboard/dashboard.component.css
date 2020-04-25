@@ -1,0 +1,21 @@
+* {
+	background:#7A2DDF;
+}
+
+.dashboard-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #9E74F2;
+    font-size: 4rem;
+}
+
+.dashboard-button {
+	border: 1px solid #9E74F2;
+	background: #7A2DDF;
+	color: #9E74F2;
+	height: 4rem;
+	width: 17rem;
+	font-size: 2rem;
+	font-family: 'Armata', sans-serif;
+    margin: 10px;
+
+}

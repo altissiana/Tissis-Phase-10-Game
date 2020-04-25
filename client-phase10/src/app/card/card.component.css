@@ -1,0 +1,94 @@
+:host {
+    height: 100%;
+    width: 100%;
+    max-width: 135px;
+    margin: 0 1px 0 1px;
+}
+
+.single-card {
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+    font-size: 3rem;
+    text-align:right;
+    color: #f5f5f5;
+    font-family: 'Averia Libre', sans-serif;
+    -webkit-text-stroke-width: 1.5px; 
+    -webkit-text-stroke-color: #404040; 
+}
+
+.single-card-competitor {
+    font-size: 2rem;
+}
+
+.deck {
+    background-image: url("assets/back-card.png");
+    background-color: #f5f5f5;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.blue {
+    background-color:#f5f5f5;
+    background-image: url("assets/blue-carddd.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.yellow {
+    background-color:#f5f5f5;
+    background-image: url("assets/yellow-card.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.green {
+    background-color:#f5f5f5;
+    background-image: url("assets/green-card.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;   
+}
+
+
+.red {
+    background-color:#f5f5f5;
+    background-image: url("assets/red-card.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;   
+}
+
+.wild {
+    background-color:#f5f5f5;
+    background-image: url("assets/wild-card.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.skip {
+    background-color:#f5f5f5;
+    background-image: url("assets/skip-card.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}

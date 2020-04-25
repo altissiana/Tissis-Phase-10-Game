@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" rowHeight="fit" class="span-container">
+    <mat-grid-tile colspan="3"></mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <h1 class="dashboard-title">What do you wanna do, {{name}}?</h1>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <button class="dashboard-button" routerLink="/startlobby">Start a lobby</button>
+        <button class="dashboard-button" routerLink="/findlobby">Find a lobby</button>
+        <button class="dashboard-button" routerLink="/tissi">Send Tissi <i class="fas fa-heart"></i></button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3"></mat-grid-tile>
+</mat-grid-list>

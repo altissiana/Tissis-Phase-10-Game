@@ -1,0 +1,31 @@
+* {
+	background:#731589;
+	color: #9E74F2;
+}
+
+.tissi-title {
+	margin-top: 150px;
+    font-size: 3.5rem;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.tissi-input {
+	background:#731589;
+	border: transparent;
+	border-bottom: 1px solid #9E74F2;
+	height: 10rem;
+	width: 100rem;
+	color: #9E74F2;
+	font-size: 2rem;
+	font-family: 'Armata', sans-serif;
+}
+
+.tissi-button {
+	border: 1px solid #9E74F2;
+	background:#731589;
+	color: #9E74F2;
+	height: 4rem;
+	width: 17rem;
+	font-size: 2rem;
+	font-family: 'Armata', sans-serif;
+}

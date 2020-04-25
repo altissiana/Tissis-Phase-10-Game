@@ -1,0 +1,23 @@
+/* .phase-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+} */
+
+:host {
+    height: 100%;
+    width: 100%;
+}
+
+
+.competitor-phase {
+    /* border: 2px solid red; */
+    font-size: 1rem;
+    color: #fff;
+    width: 200px;
+    margin-left: -400px;
+    margin-top: -250px;
+    display: flex;
+    flex-direction: column;
+}
+

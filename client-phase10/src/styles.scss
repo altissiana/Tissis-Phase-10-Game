@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Armata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    margin: 0px;
+}
+
+.span-container {
+    height: 100%;
+    width: 100%;
+}
+
+#okta-signin-username, #okta-signin-password {
+	background:#6626CB;
+	border: transparent;
+	border-bottom: 1px solid #9E74F2;
+	width: 30rem;
+	color: #9E74F2;
+	font-family: 'Armata', sans-serif;
+	font-size: 3rem;
+	text-align: center;
+}
+
+#sign-in-widget {
+	background:#6626CB;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #9E74F2;
+	font-family: 'Armata', sans-serif;
+	font-size: 3rem;
+	text-align: center;
+}
+
+#account-recovery-username {
+	background:#6626CB;
+	border: transparent;
+	border-bottom: 1px solid #9E74F2;
+	width: 30rem;
+	height: 4rem;
+}
+
+#okta-signin-username, #okta-signin-password {
+	background:#6626CB;
+	border: transparent;
+	border-bottom: 1px solid #9E74F2;
+	width: 30rem;
+	color: #9E74F2;
+	font-family: 'Armata', sans-serif;
+	font-size: 3rem;
+	text-align: center;
+}
+
+label {
+    font-size:2rem;
+}
+
+a {
+	font-size:1rem;
+	color: #9E74F2;
+} 
+
+#okta-signin-submit {
+	border: 1px solid #9E74F2;
+	background:#6626CB;
+	color: #9E74F2;
+	height: 4rem;
+	width: 17rem;
+	font-size: 2rem;
+	font-family: 'Armata', sans-serif;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}

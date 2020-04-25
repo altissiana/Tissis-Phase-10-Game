@@ -1,0 +1,67 @@
+*:not(app-card) {
+    background: #6626CB;
+  }
+  
+
+.discard {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.deck {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.game-grid, .hand-grid {
+    height: 100%;
+}
+
+.player-hand {
+    align-content: center;
+}
+
+.column-competitor {
+    justify-content: center;
+    display: flex;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+/* 
+.cdk-drop-list-receiving {
+    outline: none;
+    border: 10px solid #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+} */
+
+.draw-stage {
+    outline: none;
+    border: 5px solid #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.comp-name {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size:3rem;
+    color: #181818;
+    margin: 20px;
+}

@@ -1,0 +1,13 @@
+<mat-grid-list cols="3" rowHeight="fit" class="span-container">
+    <mat-grid-tile colspan="3">
+        <div class="startlobby-wrapper">
+            <input class="startlobby-name" type="text" name="lobby-name" placeholder="Lobby name" [(ngModel)]="lobbyName"><br><br>
+            <h2 class="startlobby-title">Choose number of players</h2>
+            <div class="buttons-wrapper">
+                <button  class="startlobby-button" (click)="onLobbySizeSelect(2)" [disabled]="!lobbyName">2</button>
+                <button class="startlobby-button" (click)="onLobbySizeSelect(3)" [disabled]="!lobbyName">3</button>
+                <button class="startlobby-button" (click)="onLobbySizeSelect(4)" [disabled]="!lobbyName">4</button>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

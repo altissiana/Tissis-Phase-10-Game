@@ -1,0 +1,9 @@
+<span class="combo-title">{{cardCombinationType}} of {{cardCombination.length}}</span>
+<div class="card-combo">
+    <app-card 
+    [card]="card" 
+    [isCompetitorCard]="isCompetitorCombo" 
+    *ngFor="let card of cardCombination.cards">
+</app-card>
+</div>
+

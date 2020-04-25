@@ -1,0 +1,30 @@
+* {
+	background:#7A2DDF;
+}
+
+
+.signup {
+	border: transparent;
+	color: #A77FF8;
+	background: #7A2DDF;
+	font-family: 'Armata', sans-serif;
+	font-size: 3.5rem;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+#signup-button{
+	background: #7A2DDF;
+	border: transparent;
+	color: #A77FF8;
+	font-family: 'Armata', sans-serif;
+	font-size: 3rem;
+	margin: 10px;
+	margin-left: 19rem; 
+}
+
+::placeholder { 
+	color: #A77FF8;
+  }

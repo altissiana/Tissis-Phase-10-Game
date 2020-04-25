@@ -1,0 +1,16 @@
+<!-- <div class="phase-wrapper" [ngClass]="player.id === phase.playerId ? 'player-phase' : 'competitor-phase'">
+    <div *ngFor="let cardCombination of phase.cardCombinations" [ngClass]="player.id === phase.playerId ? 'player-phase' : 'competitor-phase'">
+        <app-card-combination [isCompetitorCombo]="player.id !== phase.playerId" [cardCombination]="cardCombination" mwlDroppable (drop)="onComboDropped($event.dropData, cardCombination)"></app-card-combination>
+    </div>
+</div> -->
+
+<mat-grid-list cols="{{phase.cardCombinations.length}}" rowHeight="fit" class="span-container">
+    <mat-grid-tile colspan="1" rowspan="1" *ngFor="let cardCombination of phase.cardCombinations">
+        <app-card-combination 
+            [isCompetitorCombo]="player.id !== phase.playerId" 
+            [cardCombination]="cardCombination" 
+            mwlDroppable 
+            (drop)="onComboDropped($event.dropData, cardCombination)">
+        </app-card-combination>
+    </mat-grid-tile>
+</mat-grid-list>

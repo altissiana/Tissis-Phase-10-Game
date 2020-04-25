@@ -1,0 +1,44 @@
+* {
+    background: #7A2DDF;
+}
+
+::placeholder {
+    color: #A77FF8;
+}
+
+.startlobby-wrapper {
+	color:#A77FF8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: 2rem;
+	background: #7A2DDF;
+	font-family: 'Armata', sans-serif;
+}
+
+.startlobby-name {
+	background: #7A2DDF;
+	border: transparent;
+	border-bottom: 1px solid#A77FF8;
+	font-size: 4rem;
+	font-family: 'Armata', sans-serif;
+	text-align: center;
+	color: #A77FF8;
+}
+
+.startlobby-button {
+	border: transparent;
+	color: #A77FF8;
+	background: #7A2DDF;
+	height: 4rem;
+	width: 17rem;
+	font-size: 3rem;
+	font-family: 'Armata', sans-serif;
+	margin: 10px;
+	float: left;
+}
+
+.buttons-wrapper {
+	display: flex;
+}

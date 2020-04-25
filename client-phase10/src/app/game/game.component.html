@@ -1,0 +1,136 @@
+
+<mat-grid-list cols="{{viewColumns}}" rowHeight="fit" class="game-grid">
+
+    <!-- competitors -->
+    <mat-grid-tile colspan="{{viewColumns / competitors.length}}" rowspan="2" *ngFor="let competitor of competitors; index as i">
+        <mat-grid-list cols="1" rowHeight="fit" class="span-container">
+            <mat-grid-tile>
+                <div class="span-container column-competitor">
+                    <span class="comp-name">{{competitor.name}}</span>
+                </div>
+            </mat-grid-tile>
+
+            <!--Competitor card combination 1-->
+            <mat-grid-tile rowspan="2">
+                <app-card-combination 
+                    [isCompetitorCombo]="true" 
+                    [cardCombination]="competitor.phase.cardCombinations[0]"
+                    cdkDropList
+                    id="{{'opp' + i + 'Combo1DropList'}}"
+                    cdkDropListOrientation="horizontal"
+                    [cdkDropListData]="competitor.phase.cardCombinations[0].cards"
+                    (cdkDropListDropped)="onCompetitorComboDropped(competitor, $event)" >
+                </app-card-combination>
+            </mat-grid-tile>
+
+            <!--Competitor card combination 2 (if exists)-->
+            <mat-grid-tile *ngIf="competitor.phase.cardCombinations[1]" rowspan="2">
+                <app-card-combination 
+                    [isCompetitorCombo]="true" 
+                    [cardCombination]="competitor.phase.cardCombinations[1]" 
+                    cdkDropList
+                    id="{{'opp' + i + 'Combo2DropList'}}"
+                    cdkDropListOrientation="horizontal"
+                    [cdkDropListData]="competitor.phase.cardCombinations[1].cards"
+                    (cdkDropListDropped)="onCompetitorComboDropped(competitor, $event)" >
+                </app-card-combination>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-grid-tile>
+
+    <!--Empty space-->
+    <mat-grid-tile colspan="{{viewColumns / 6 * 2}}" rowspan="1"></mat-grid-tile>
+
+    <!--Deck-->
+    <mat-grid-tile colspan="{{viewColumns / 6}}" rowspan="1">
+        <div class="deck"
+            cdkDropList
+            [cdkDropListConnectedTo]="['playerHandDropList']"
+            id="{{deckId}}">
+            <app-card 
+                [card]="deckCard" 
+                [isCompetitorCard]="false">
+            </app-card>
+        </div>
+    </mat-grid-tile>
+
+    <!--Discard Pile-->
+    <mat-grid-tile colspan="{{viewColumns / 6}}" rowspan="1">
+        <div class="discard"
+            cdkDropList
+            [cdkDropListConnectedTo]="['playerHandDropList']"
+            (cdkDropListDropped)="onDiscardPileDropped($event.item.data)"
+            [cdkDropListData]="discardPile"
+            id="{{discardPileId}}">
+
+            <app-card 
+                [card]="discardPile" 
+                [isCompetitorCard]="false" 
+                *ngIf="discardPile !== null; else elseTemplate"
+                id="discard-pile">
+            </app-card>
+            <ng-template #elseTemplate>
+                <div class="single-card">
+                    <p>EMPTY</p>
+                </div> 
+            </ng-template>
+        </div>
+    </mat-grid-tile>
+
+    <!--Empty space-->
+    <mat-grid-tile colspan="{{viewColumns / 6 * 2}}" rowspan="1"></mat-grid-tile>
+
+    <!--Player Phase-->
+    <mat-grid-tile colspan="{{viewColumns}}" rowspan="1">
+
+        <!--Combinations-->
+        <mat-grid-list cols="{{player.phase.cardCombinations.length}}" rowHeight="fit" class="span-container">
+
+            <!--First combination-->
+            <mat-grid-tile>
+                <app-card-combination 
+                    [isCompetitorCombo]="false" 
+                    [cardCombination]="player.phase.cardCombinations[0]" 
+                    cdkDropList
+                    id="playerComboOneDropList"
+                    cdkDropListOrientation="horizontal"
+                    [cdkDropListConnectedTo]="['playerHandDropList', 'playerComboTwoDropList']"
+                    [cdkDropListData]="player.phase.cardCombinations[0].cards"
+                    (cdkDropListDropped)="onPlayerComboDropped($event)">
+                </app-card-combination>
+            </mat-grid-tile>
+
+            <!--Second combination (if exists)-->
+            <mat-grid-tile *ngIf="player.phase.cardCombinations[1]">
+                    <app-card-combination 
+                        [isCompetitorCombo]="false" 
+                        [cardCombination]="player.phase.cardCombinations[1]" 
+                        cdkDropList
+                        id="playerComboTwoDropList"
+                        cdkDropListOrientation="horizontal"
+                        [cdkDropListConnectedTo]="['playerHandDropList', 'playerComboOneDropList']"
+                        [cdkDropListData]="player.phase.cardCombinations[1].cards"
+                        (cdkDropListDropped)="onPlayerComboDropped($event)">
+                </app-card-combination>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-grid-tile>
+
+    <!--Player hand-->
+    <mat-grid-tile 
+        colspan="{{viewColumns}}" 
+        rowspan="1" 
+        class="player-hand"
+        cdkDropList
+        id="{{playerHandId}}"
+        cdkDropListOrientation="horizontal"
+        [cdkDropListConnectedTo]="['discardPileDropList', 'deckDropList', 'playerComboOneDropList', 'playerComboTwoDropList', 'opp0Combo1DropList', 'opp0Combo2DropList', 'opp1Combo1DropList', 'opp1Combo2DropList', 'opp2Combo1DropList', 'opp2Combo2DropList']"
+        [cdkDropListData]="player.hand"
+        (cdkDropListDropped)="onHandDropped($event)"
+        (dblclick)="sortHand()">
+        <app-card [card]="card" 
+                [isCompetitorCard]="false" 
+                *ngFor="let card of player.hand">                
+        </app-card> 
+    </mat-grid-tile>
+</mat-grid-list>

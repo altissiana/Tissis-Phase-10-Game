@@ -1,0 +1,13 @@
+ <div class='container' ng-cloak ng-app="chatApp">
+    <h1 class="lobby-name">{{lobby.name}}</h1>
+    <span *ngIf="lobby.size - lobby.players.length > 0; else elseBlock" class="lobby-size">Waiting for {{lobby.size - lobby.players.length}} more people</span>
+    <ng-template #elseBlock><span  class="lobby-size">All players have joined. Click start to begin.</span></ng-template>
+    <button  type="button" (click)="startGame()" class="bounce">Play</button>
+
+    <div class='chatbox' #chatbox>
+        <p #messages *ngFor="let chat of chats; let last = last">
+            {{chat}}
+        </p>
+    </div>
+    <input type="text" class="lobby-input" placeholder="Enter your message" [(ngModel)]="message" (keydown.enter)="sendMessage()"/>
+</div>

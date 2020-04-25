@@ -1,0 +1,22 @@
+<mat-grid-list cols="3" rowHeight="fit" class="span-container">
+    <mat-grid-tile rowspan="3"></mat-grid-tile>
+    <mat-grid-tile>
+        <input class="search-lobby" placeholder="Search" [ngModel]="searchModel" (ngModelChange)="updateSearchModel($event)"><i class="fas fa-search fa-2x"></i>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="3"></mat-grid-tile>
+    <mat-grid-tile rowspan="2">
+        <div class="scroll span-container">
+            <ul class="findlobby-ul">
+                <li *ngFor="let lobby of filteredLobbies">
+                    <div class="parent">
+                        <h3 class="child inline-block-child" id="lobby-name" (click)="onLobbyClicked(lobby.id)">{{lobby.name}}</h3>
+                        <p class="child inline-block-child" id="lobby-creator">@{{creatorName(lobby)}}</p>
+                    </div>
+                    <div *ngIf="lobby.size - lobby.players.length > 0; else elseBlock" class="lobby-size">Waiting for {{lobby.size - lobby.players.length}} more people</div>
+                    <ng-template #elseBlock><div class="lobby-size-full">Lobby is full</div></ng-template>
+                </li>
+            </ul>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+

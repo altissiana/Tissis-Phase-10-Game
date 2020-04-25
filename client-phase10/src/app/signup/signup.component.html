@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" rowHeight="fit" class="span-container">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <input class="signup" required type="text" formControlName="firstName" id="signup-firstName" name="signup-firstName" placeholder="First Name"><br><br>
+                <input class="signup" required type="text" formControlName="lastName" id="signup-lastName" name="signup-lastName" placeholder="Last Name"><br><br>
+                <input class="signup" required type="email" formControlName="email" id="signup-email" name="signup-email" placeholder="Email"><br><br>
+                <input class="signup" required type="password" formControlName="password" id="signup-password" name="signup-password" placeholder="Password"><br><br>
+                <button id="signup-button" type="submit" [disabled]="!signupForm.valid">GO</button>
+            </form>
+    </mat-grid-tile>
+</mat-grid-list>
